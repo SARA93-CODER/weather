@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [userInput, setUserInput] = useState("");
+  const [location, setLoction] = useState(null);
+
+  const handleChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const displayWeather = (location) => {
+    setLoction();
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <input
+          type="text"
+          placeholder="Search Location..."
+          value={userInput}
+          onChange={(e) => handleChange()}
+        />
+        <button onClick={(input) => displayWeather(input)}>Search</button>
+      </div>
     </div>
   );
 }
