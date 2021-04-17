@@ -29,8 +29,6 @@ const Weather = () => {
     }
   };
 
-  console.log(weather);
-
   return (
     <div className="weather-app">
       <form onSubmit={getWeatherData}>
